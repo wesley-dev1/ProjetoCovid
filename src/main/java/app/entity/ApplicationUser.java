@@ -1,3 +1,4 @@
+
 package app.entity;
 
 import java.io.*;
@@ -7,6 +8,7 @@ import javax.xml.bind.annotation.*;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonFilter;
 import cronapi.rest.security.CronappSecurity;
+import cronapi.swagger.CronappSwagger;
 
 
 /**
@@ -16,10 +18,9 @@ import cronapi.rest.security.CronappSecurity;
 @Entity
 @Table(name = "\"APPLICATION_USER\"")
 @XmlRootElement
-@CronappSecurity
+@CronappSecurity(post = "Administrators", get = "Administrators", delete = "Administrators", put = "Administrators")
 @JsonFilter("app.entity.ApplicationUser")
 public class ApplicationUser implements Serializable {
-
     /**
     * UID da classe, necessário na serialização
     * @generated
@@ -33,6 +34,7 @@ public class ApplicationUser implements Serializable {
     @Column(name = "id", nullable = false, insertable=true, updatable=true)
         private java.lang.String id = UUID.randomUUID().toString().toUpperCase();
 
+
     /**
     * @generated
     */
@@ -41,6 +43,7 @@ public class ApplicationUser implements Serializable {
         
         private Application application;
 
+
     /**
     * @generated
     */
@@ -48,6 +51,7 @@ public class ApplicationUser implements Serializable {
     @JoinColumn(name="user_id", nullable = true, referencedColumnName = "id", insertable=true, updatable=true, foreignKey = @ForeignKey(name = "", foreignKeyDefinition = "FOREIGN KEY (user_id) REFERENCES USER (id)"))
         
         private User user;
+
 
     /**
     * Construtor
@@ -61,8 +65,7 @@ public class ApplicationUser implements Serializable {
     * return id
     * @generated
     */
-    
-    public java.lang.String getId(){
+    public java.lang.String getId() {
         return this.id;
     }
 
@@ -71,7 +74,7 @@ public class ApplicationUser implements Serializable {
     * @param id id
     * @generated
     */
-    public ApplicationUser setId(java.lang.String id){
+    public ApplicationUser setId(java.lang.String id) {
         this.id = id;
         return this;
     }
@@ -80,8 +83,7 @@ public class ApplicationUser implements Serializable {
     * return application
     * @generated
     */
-    
-    public Application getApplication(){
+    public Application getApplication() {
         return this.application;
     }
 
@@ -90,7 +92,7 @@ public class ApplicationUser implements Serializable {
     * @param application application
     * @generated
     */
-    public ApplicationUser setApplication(Application application){
+    public ApplicationUser setApplication(Application application) {
         this.application = application;
         return this;
     }
@@ -99,8 +101,7 @@ public class ApplicationUser implements Serializable {
     * return user
     * @generated
     */
-    
-    public User getUser(){
+    public User getUser() {
         return this.user;
     }
 
@@ -109,7 +110,7 @@ public class ApplicationUser implements Serializable {
     * @param user user
     * @generated
     */
-    public ApplicationUser setUser(User user){
+    public ApplicationUser setUser(User user) {
         this.user = user;
         return this;
     }

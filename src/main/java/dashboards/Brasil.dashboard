@@ -1,0 +1,289 @@
+{
+  "ReportVersion": "2019.4.2",
+  "ReportGuid": "2800460fe0aa2ebd2859b5fd17d6d09b",
+  "ReportName": "Report",
+  "ReportAlias": "Report",
+  "ReportCreated": "/Date(1647010670000-0300)/",
+  "ReportChanged": "/Date(1647010670000-0300)/",
+  "EngineVersion": "EngineV2",
+  "CalculationMode": "Interpretation",
+  "ReportUnit": "Centimeters",
+  "PreviewSettings": 268435455,
+  "Dictionary": {
+    "DataSources": {
+      "0": {
+        "Ident": "StiODataSource",
+        "Name": "app_DadosBrasil",
+        "Alias": "app.DadosBrasil",
+        "Columns": {
+          "0": {
+            "Name": "id",
+            "Index": -1,
+            "NameInSource": "id",
+            "Alias": "id",
+            "Type": "System.String"
+          },
+          "1": {
+            "Name": "pais",
+            "Index": -1,
+            "NameInSource": "pais",
+            "Alias": "pais",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "data",
+            "Index": -1,
+            "NameInSource": "data",
+            "Alias": "data",
+            "Type": "System.String"
+          },
+          "3": {
+            "Name": "semanaepidemia",
+            "Index": -1,
+            "NameInSource": "semanaepidemia",
+            "Alias": "semanaepidemia",
+            "Type": "System.String"
+          },
+          "4": {
+            "Name": "casosacumulados",
+            "Index": -1,
+            "NameInSource": "casosacumulados",
+            "Alias": "casosacumulados",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "casosnovos",
+            "Index": -1,
+            "NameInSource": "casosnovos",
+            "Alias": "casosnovos",
+            "Type": "System.String"
+          },
+          "6": {
+            "Name": "recuperadosnovos",
+            "Index": -1,
+            "NameInSource": "recuperadosnovos",
+            "Alias": "recuperadosnovos",
+            "Type": "System.String"
+          },
+          "7": {
+            "Name": "emacompanhamentonovos",
+            "Index": -1,
+            "NameInSource": "emacompanhamentonovos",
+            "Alias": "emacompanhamentonovos",
+            "Type": "System.String"
+          },
+          "8": {
+            "Name": "_objectKey",
+            "Index": -1,
+            "NameInSource": "_objectKey",
+            "Alias": "_objectKey",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "app",
+        "SqlCommand": "DadosBrasil"
+      }
+    },
+    "Databases": {
+      "0": {
+        "Ident": "StiODataDatabase",
+        "Name": "app",
+        "Alias": "app",
+        "ConnectionStringEncrypted": "n1JNiWhRe5HCSfn06whhFsDswYnIWdOBbA=="
+      }
+    }
+  },
+  "Pages": {
+    "0": {
+      "Ident": "StiDashboard",
+      "Name": "Dashboard1",
+      "Guid": "402c654a56a1df9762556e95a64d24ea",
+      "Brush": "solid:Transparent",
+      "Components": {
+        "0": {
+          "Ident": "StiChartElement",
+          "Name": "ChartElement1",
+          "Guid": "0286b4fb6c2fe9d0e20777de2c5f689e",
+          "ClientRectangle": "440,0,620,500",
+          "Border": ";;;;",
+          "Values": {
+            "0": {
+              "Ident": "ValueChartMeter",
+              "Key": "52d5b22d4a066668e33995524573aee4",
+              "Expression": "Count(app_DadosBrasil.casosacumulados)",
+              "Label": "casosacumulados",
+              "SeriesType": "Line"
+            },
+            "1": {
+              "Ident": "ValueChartMeter",
+              "Key": "aae3a9688e1a985947fb17dfb4ae2adb",
+              "Expression": "Count(app_DadosBrasil.casosnovos)",
+              "Label": "casosnovos"
+            }
+          },
+          "Arguments": {
+            "0": {
+              "Ident": "ArgumentChartMeter",
+              "Key": "e9c567a6005e52e0b19c32376d4221c4",
+              "Expression": "app_DadosBrasil.data",
+              "Label": "data"
+            }
+          },
+          "DashboardInteraction": {
+            "Ident": "Chart",
+            "OnHover": "ShowToolTip",
+            "OnClick": "ApplyFilter",
+            "HyperlinkDestination": "NewTab"
+          },
+          "Title": {
+            "Text": "Casos de covid"
+          },
+          "ArgumentFormat": {
+            "Ident": "StiGeneralFormatService"
+          },
+          "ValueFormat": {
+            "Ident": "StiGeneralFormatService"
+          },
+          "Area": {
+            "GridLinesHor": {
+              "Color": "Transparent",
+              "Visible": true
+            },
+            "GridLinesVert": {
+              "Color": "Transparent"
+            },
+            "InterlacingHor": {
+              "Color": "Transparent"
+            },
+            "InterlacingVert": {
+              "Color": "Transparent"
+            }
+          },
+          "Labels": {
+            "Position": "None"
+          },
+          "Style": "SlateGray"
+        },
+        "1": {
+          "Ident": "StiTableElement",
+          "Name": "TableElement1",
+          "Guid": "f67e8f90cdc747da817ab117a8f5427f",
+          "ClientRectangle": "40,140,280,280",
+          "Border": ";;;;",
+          "Columns": {
+            "0": {
+              "Ident": "DimensionColumn",
+              "Key": "703f9535bf43bc0b480f8b07ec596d55",
+              "Expression": "app_DadosBrasil.id",
+              "Label": "id",
+              "DashboardInteraction": {
+                "Ident": "TableColumn",
+                "OnHover": "None",
+                "OnClick": "None",
+                "HyperlinkDestination": "NewTab"
+              }
+            },
+            "1": {
+              "Ident": "DimensionColumn",
+              "Key": "23a9ce946d9e24f2887d77ec1ac427b7",
+              "Expression": "app_DadosBrasil.pais",
+              "Label": "pais",
+              "DashboardInteraction": {
+                "Ident": "TableColumn",
+                "OnHover": "None",
+                "OnClick": "None",
+                "HyperlinkDestination": "NewTab"
+              }
+            },
+            "2": {
+              "Ident": "DimensionColumn",
+              "Key": "96b0a73ee67225e2708f7adf5defcec4",
+              "Expression": "app_DadosBrasil.data",
+              "Label": "data",
+              "DashboardInteraction": {
+                "Ident": "TableColumn",
+                "OnHover": "None",
+                "OnClick": "None",
+                "HyperlinkDestination": "NewTab"
+              }
+            },
+            "3": {
+              "Ident": "DimensionColumn",
+              "Key": "51954431e202f9d20f32e75565136c59",
+              "Expression": "app_DadosBrasil.semanaepidemia",
+              "Label": "semanaepidemia",
+              "DashboardInteraction": {
+                "Ident": "TableColumn",
+                "OnHover": "None",
+                "OnClick": "None",
+                "HyperlinkDestination": "NewTab"
+              }
+            },
+            "4": {
+              "Ident": "DimensionColumn",
+              "Key": "9f77bcd51405a4a2689df6ded7319617",
+              "Expression": "app_DadosBrasil.casosacumulados",
+              "Label": "casosacumulados",
+              "DashboardInteraction": {
+                "Ident": "TableColumn",
+                "OnHover": "None",
+                "OnClick": "None",
+                "HyperlinkDestination": "NewTab"
+              }
+            },
+            "5": {
+              "Ident": "DimensionColumn",
+              "Key": "4f49e2aeaef1a5752db312ce9b4044b3",
+              "Expression": "app_DadosBrasil.casosnovos",
+              "Label": "casosnovos",
+              "DashboardInteraction": {
+                "Ident": "TableColumn",
+                "OnHover": "None",
+                "OnClick": "None",
+                "HyperlinkDestination": "NewTab"
+              }
+            },
+            "6": {
+              "Ident": "DimensionColumn",
+              "Key": "8dcff5752ab6c88c2ec81cb3df49194e",
+              "Expression": "app_DadosBrasil.recuperadosnovos",
+              "Label": "recuperadosnovos",
+              "DashboardInteraction": {
+                "Ident": "TableColumn",
+                "OnHover": "None",
+                "OnClick": "None",
+                "HyperlinkDestination": "NewTab"
+              }
+            },
+            "7": {
+              "Ident": "DimensionColumn",
+              "Key": "bea7386671403453c8793cd27963a42a",
+              "Expression": "app_DadosBrasil.emacompanhamentonovos",
+              "Label": "emacompanhamentonovos",
+              "DashboardInteraction": {
+                "Ident": "TableColumn",
+                "OnHover": "None",
+                "OnClick": "None",
+                "HyperlinkDestination": "NewTab"
+              }
+            }
+          },
+          "HeaderFont": ";10;;",
+          "FooterFont": ";10;;",
+          "Title": {
+            "Text": "Tabela"
+          },
+          "DashboardInteraction": {
+            "Ident": "Table",
+            "OnHover": "ShowToolTip",
+            "OnClick": "ApplyFilter",
+            "HyperlinkDestination": "NewTab"
+          },
+          "Style": "SlateGray"
+        }
+      },
+      "Style": "DarkTurquoise",
+      "Border": ";;2;;;;;solid:Black"
+    }
+  }
+}
